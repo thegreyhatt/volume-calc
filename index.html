@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Volume Calculator</title>
+
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="m-5">
+        <input type="number" v-model="length">
+        <input type="number" v-model="width">
+        <input type="number" v-model="height">
+
+        <input type="text" v-model="sample_text">
+
+        <p>{{sample_text}}</p>
+        <p>Result: {{calculate_volume}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				length: 0,
+				width: 0,
+				height: 0,
+				sample_text: '',
+			},
+			computed: {
+				calculate_volume(){
+                    return this.length * this.width * this.height;
+                }
+			},
+			methods: {
+			
+			}
+		})
+	</script>
+</body>
+</html>
